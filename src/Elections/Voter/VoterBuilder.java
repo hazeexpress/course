@@ -12,7 +12,12 @@ public class VoterBuilder {
         System.out.println("Введите номер паспорта избирателя: ");
         String passNumber = in.nextLine();
         System.out.println("Введите ИНН избирателя: ");
-        long inn = setInn(in.nextLong());
+        long inn = 0;
+        try {
+            inn = setInn(Long.parseLong(in.nextLine()));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
         System.out.println("Введите год рождения избирателя: ");
         int yearOfBirth = Integer.parseInt(in.nextLine());
         System.out.println("Введите избирательный участок: ");
@@ -33,15 +38,10 @@ public class VoterBuilder {
         }
     }
 
-    private static Long setInn(long inn) {
-        try {
-            int length = (int) (Math.log10(inn) + 1);
-            if (length == 10) {
-                return inn;
-            }
-        } catch (NumberFormatException exception) {
-            exception.printStackTrace();
-            System.out.println("ИНН не равен 10 символам!");
+    private static Long setInn(long inn) throws Exception {
+        int length = (int) (Math.log10(inn) + 1);
+        if (length != 10) {
+            throw new Exception("ИНН не равен 10 символам!");
         }
         return inn;
     }
