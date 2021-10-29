@@ -1,5 +1,6 @@
 package Elections;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -8,6 +9,7 @@ public class Party {
     private Enum fraction;
     private Date dateOfCreatingParty;
     //private List candidates;
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
 
     public Party(String name, FractionType fraction, Date dateOfCreatingParty/*, List candidates*/) {
         this.name = name;
@@ -50,10 +52,9 @@ public class Party {
 
     @Override
     public String toString() {
-        return "Party {" +
-                "name='" + name + '\'' +
-                ", fraction=" + fraction +
-                ", dateOfCreatingParty=" + dateOfCreatingParty +
-                '}';
+        return "\n" +
+                "╔═ Party name: " + name  + "\n" +
+                "╠═ Fraction: " + fraction + "\n" +
+                "╚═ Date of creating: " + simpleDateFormat.format(dateOfCreatingParty) + "\n";
     }
 }

@@ -7,9 +7,9 @@ public class Precinct {
     private String address;
     private List<Voter> acceptedVoter;
     private double proportionOfVoter;
-    private String typeOfPrecinct;
+    private PrecinctType typeOfPrecinct;
 
-    public Precinct(int index, String address, List<Voter> acceptedVoter, double proportionOfVoter, String typeOfPrecinct) {
+    public Precinct(int index, String address, List<Voter> acceptedVoter, double proportionOfVoter, PrecinctType typeOfPrecinct) {
         this.index = index;
         this.address = address;
         this.acceptedVoter = acceptedVoter;
@@ -49,22 +49,21 @@ public class Precinct {
         this.proportionOfVoter = proportionOfVoter;
     }
 
-    public String getTypeOfPrecinct() {
+    public PrecinctType getTypeOfPrecinct() {
         return typeOfPrecinct;
     }
 
-    public void setTypeOfPrecinct(String typeOfPrecinct) {
+    public void setTypeOfPrecinct(PrecinctType typeOfPrecinct) {
         this.typeOfPrecinct = typeOfPrecinct;
     }
 
     @Override
     public String toString() {
-        return "Precinct {" +
-                "index=" + index +
-                ", address='" + address + '\'' +
-                ", acceptedVoter=" + acceptedVoter +
-                ", proportionOfVoter=" + proportionOfVoter +
-                ", typeOfPrecinct='" + typeOfPrecinct + '\'' +
-                '}';
+        return "\n" +
+                "╔═ Precinct index: " + index + "\n" +
+                "╠═ Address: '" + address + '\'' + "\n" +
+//                "╠═ AcceptedVoter: " + acceptedVoter + "\n" +
+                "╠═ Proportion Of Voter: " + proportionOfVoter + "\n" +
+                "╚═ Type Of Precinct: '" + typeOfPrecinct + '\'' + "\n";
     }
 }

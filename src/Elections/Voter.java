@@ -2,14 +2,14 @@ package Elections;
 
 public class Voter {
     private String name;
-    private int passportNumber;
-    private int identificationNumber;
+    private String passportNumber;
+    private long identificationNumber;
     private int yearOfBirth;
     private int precinct;
     private boolean ifMilitary;
     private boolean ifOnQuarantine;
 
-    public Voter(String name, int passportNumber, int identificationNumber, int yearOfBirth, int precinct, boolean ifMilitary, boolean ifOnQuarantine) {
+    public Voter(String name, String passportNumber, long identificationNumber, int yearOfBirth, int precinct, boolean ifMilitary, boolean ifOnQuarantine) {
         this.name = name;
         this.passportNumber = passportNumber;
         this.identificationNumber = identificationNumber;
@@ -27,19 +27,19 @@ public class Voter {
         this.name = name;
     }
 
-    public int getPassportNumber() {
+    public String getPassportNumber() {
         return passportNumber;
     }
 
-    public void setPassportNumber(int passportNumber) {
+    public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
 
-    public int getIdentificationNumber() {
+    public long getIdentificationNumber() {
         return identificationNumber;
     }
 
-    public void setIdentificationNumber(int identificationNumber) {
+    public void setIdentificationNumber(long identificationNumber) {
         this.identificationNumber = identificationNumber;
     }
 
@@ -77,14 +77,13 @@ public class Voter {
 
     @Override
     public String toString() {
-        return "Voter {" +
-                "name='" + name + '\'' +
-                ", passportNumber=" + passportNumber +
-                ", identificationNumber=" + identificationNumber +
-                ", yearOfBirth=" + yearOfBirth +
-                ", precinct=" + precinct +
-                ", ifMilitary=" + ifMilitary +
-                ", ifOnQuarantine=" + ifOnQuarantine +
-                '}';
+        return "\n" +
+                "╔═ Voter name: '" + name + '\'' + "\n" +
+                "╠═ Passport number: " + passportNumber + "\n" +
+                "╠═ Identification Number: " + identificationNumber + "\n" +
+                "╠═ Year of Birth: " + yearOfBirth + "\n" +
+                "╠═ Precinct number: " + (precinct == 0 ? "Not attached to precinct." : precinct) + "\n" +
+                "╠═ Military: " + (ifMilitary ? "Yes" : "No") + "\n" +
+                "╚═ Is in quarantine: " + (ifOnQuarantine ? "Yes" : "No")  + "\n";
     }
 }

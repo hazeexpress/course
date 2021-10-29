@@ -1,24 +1,24 @@
 import Elections.*;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
+    Scanner in = new Scanner(System.in);
     List<Election> electionsList = new ArrayList<>();
     List<Voter> voterList = new ArrayList<>();
     List<Precinct> precinctsList = new ArrayList<>();
     List<Party> partiesList = new ArrayList<>();
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Main main = new Main();
         main.run();
     }
 
-    private void run() {
-        Scanner in = new Scanner(System.in);
+    private void run() throws ParseException {
         boolean f = true;
         while (f) {
             System.out.println("Make your choice...");
@@ -34,22 +34,21 @@ public class Main {
             System.out.println("10. Out of program.");
             int menuChoice = in.nextInt();
             switch (menuChoice) {
-                case 1 -> PrecinctBuilder.addPrecinct(precinctsList);
+                case 1 -> PrecinctBuilder.addPrecinct(precinctsList, voterList);
                 case 2 -> VoterBuilder.addVoter(voterList);
                 case 3 -> PartyBuilder.addParty(partiesList);
-                case 4 -> viewList(partiesList);
-                case 5 -> System.out.println("test");
-                case 6 -> System.out.println("test");
-                case 7 -> System.out.println("test");
+                case 4 -> System.out.println("test");
+                case 5 -> PrecinctBuilder.getPrecincts(precinctsList, voterList);
+                case 6 -> viewList(voterList);
+                case 7 -> viewList(partiesList);
                 case 8 -> System.out.println("test");
                 case 9 -> System.out.println("test");
                 case 10 -> f = false;
-                //case 3 -> System.out.println(electorList);
             }
         }
     }
 
-    private void viewList(List<Party> list) {
-        System.out.println(list);
+    private void viewList(List list) {
+        System.out.println(list.size() > 0 ? list : "---> List is empty!");
     }
 }
