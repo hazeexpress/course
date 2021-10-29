@@ -1,4 +1,4 @@
-package Elections;
+package Elections.Voter;
 
 public class Voter {
     private String name;

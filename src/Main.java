@@ -1,4 +1,10 @@
 import Elections.*;
+import Elections.Party.Party;
+import Elections.Party.PartyBuilder;
+import Elections.Precinct.Precinct;
+import Elections.Precinct.PrecinctBuilder;
+import Elections.Voter.Voter;
+import Elections.Voter.VoterBuilder;
 
 import java.text.ParseException;
 import java.util.ArrayList;

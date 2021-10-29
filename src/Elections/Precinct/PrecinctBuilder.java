@@ -1,4 +1,7 @@
-package Elections;
+package Elections.Precinct;
+
+import Elections.Voter.Voter;
+import Elections.Voter.VoterBuilder;
 
 import java.util.ArrayList;
 import java.util.Calendar;

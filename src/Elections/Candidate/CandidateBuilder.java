@@ -1,4 +1,4 @@
-package Elections;
+package Elections.Candidate;
 
 import java.util.ArrayList;
 import java.util.List;

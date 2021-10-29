@@ -1,4 +1,6 @@
-package Elections;
+package Elections.Party;
+
+import Elections.Fraction.FractionType;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

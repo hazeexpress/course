@@ -1,8 +1,9 @@
-package Elections;
+package Elections.Party;
+
+import Elections.Fraction.FractionType;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class Party {
     private String name;

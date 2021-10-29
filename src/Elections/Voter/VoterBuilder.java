@@ -1,4 +1,4 @@
-package Elections;
+package Elections.Voter;
 
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ public class VoterBuilder {
         System.out.println("Введите номер паспорта избирателя: ");
         String passNumber = in.nextLine();
         System.out.println("Введите ИНН избирателя: ");
-        long inn = Integer.parseInt(in.nextLine());
+        long inn = setInn(in.nextLong());
         System.out.println("Введите год рождения избирателя: ");
         int yearOfBirth = Integer.parseInt(in.nextLine());
         System.out.println("Введите избирательный участок: ");
@@ -31,5 +31,18 @@ public class VoterBuilder {
         } else {
             System.out.println("Список избирателей пуст!");
         }
+    }
+
+    private static Long setInn(long inn) {
+        try {
+            int length = (int) (Math.log10(inn) + 1);
+            if (length == 10) {
+                return inn;
+            }
+        } catch (NumberFormatException exception) {
+            exception.printStackTrace();
+            System.out.println("ИНН не равен 10 символам!");
+        }
+        return inn;
     }
 }

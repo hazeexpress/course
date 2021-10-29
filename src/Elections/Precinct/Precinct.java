@@ -1,4 +1,6 @@
-package Elections;
+package Elections.Precinct;
+
+import Elections.Voter.Voter;
 
 import java.util.List;
 

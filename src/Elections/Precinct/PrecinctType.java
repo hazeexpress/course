@@ -1,4 +1,4 @@
-package Elections;
+package Elections.Precinct;
 
 public enum PrecinctType {
     NORMAL,
